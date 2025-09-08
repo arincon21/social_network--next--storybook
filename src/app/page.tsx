@@ -1,3 +1,4 @@
+import SidebarLeft from "@/components/layouts/sidebar-left";
 import Button from "@/components/ui/button";
 import Card from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
@@ -11,6 +12,8 @@ export default function Home() {
       <Button variant="secondary" size="md">Click Me</Button>
       <Button variant="primary" size="md">Click Me</Button>
       <Icon name="olymp-logout-icon" className="w-5 h-5 text-gray-600" />
+
+      <SidebarLeft/>
     </div>
   );
 }

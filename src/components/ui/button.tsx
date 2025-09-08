@@ -1,5 +1,4 @@
 'use client'
-import React from 'react';
 
 interface ButtonProps {
     children: React.ReactNode;
@@ -44,11 +43,8 @@ const Button = ({ children, variant = 'primary', size = 'md', onClick }: ButtonP
     }
 
     return (
-        <button
-            onClick={createRipple}
-            className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`}
-        >
-            {children}
+        <button onClick={createRipple} className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`} >
+            { children }
         </button>
     );
 };
