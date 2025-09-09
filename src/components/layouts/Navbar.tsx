@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { Search } from "lucide-react";
-import ProfileMenu from "@/components/navbar/ProfileMenu";
-import NotificationsDropdown from "@/components/navbar/NotificationsDropdown";
-import MessagesDropdown from "@/components/navbar/MessagesDropdown";
-import FriendRequestsDropdown from "@/components/navbar/FriendRequestsDropdown";
+import ProfileMenu from "@/components/ui/profile-menu";
+import NotificationsDropdown from "@/components/ui/notifications-dropdown";
+import MessagesDropdown from "@/components/ui/messages-dropdown";
+import FriendRequestsDropdown from "@/components/ui/friend-requests-dropdown";
+import NavbarLogo from "@/components/ui/navbar-logo";
+import NavbarSearch from "@/components/ui/navbar-search";
 
 const Navbar: React.FC = () => {
   return (
@@ -13,23 +14,15 @@ const Navbar: React.FC = () => {
       <div className="mx-auto h-full px-4 flex items-center gap-4">
         {/* Left: Page title / logo */}
         <div className="w-[300px] flex items-center gap-4 pl-[80px]">
-          <div className="text-white font-bold tracking-wider text-xl">
-            NOTICIAS
-          </div>
+          <NavbarLogo title="NOTICIAS" />
         </div>
 
         {/* Center: Search */}
         <div className="flex-1 flex justify-center mx-4">
-          <div className="relative w-full max-w-[600px] h-[70px]">
-            <input
-              aria-label="Buscar"
-              placeholder="Busca aquí personas o páginas..."
-              className="w-full h-full bg-[#47495f] text-sm text-gray-200 placeholder:text-gray-400 pl-4 pr-10 outline-none"
-            />
-            <span className="absolute inset-y-0 right-3 flex items-center text-gray-300">
-              <Search size={25} />
-            </span>
-          </div>
+          <NavbarSearch 
+            placeholder="Busca aquí personas o páginas..."
+            ariaLabel="Buscar"
+          />
         </div>
 
         {/* Right: icons + profile */}

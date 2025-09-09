@@ -1,9 +1,9 @@
-
 "use client";
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, FileText, Star, LogOut } from "lucide-react";
 import { useClickOutside } from "@/hooks/use-click-outside";
+import ProfileDropdown from "@/components/ui/profile-dropdown";
 
 const ProfileMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,11 +43,7 @@ const ProfileMenu: React.FC = () => {
       </div>
 
       {/* Dropdown menu */}
-      <div
-        className={`origin-top-right absolute right-0 w-64 bg-white rounded-sm shadow-[0_0_34px_0_rgba(63,66,87,0.1)] z-30 transition-opacity ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      >
+      <ProfileDropdown isOpen={menuOpen}>
         <div className="p-3 border-b border-gray-100 text-xs text-gray-400 font-semibold">
           TU CUENTA
         </div>
@@ -166,7 +162,7 @@ const ProfileMenu: React.FC = () => {
             </button>
           </div>
         </div>
-      </div>
+      </ProfileDropdown>
     </div>
   );
 };
