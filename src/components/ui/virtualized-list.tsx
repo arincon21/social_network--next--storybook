@@ -1,12 +1,12 @@
 "use client";
-import { memo, useMemo, useCallback } from "react";
-import { FixedSizeList } from "react-window";
+import { memo, useCallback, CSSProperties, ReactElement } from "react";
+import { FixedSizeList as List, ListChildComponentProps } from "react-window";
 
 interface VirtualizedListProps {
   items: any[];
   itemHeight: number;
   height: number;
-  renderItem: (props: { index: number; style: any; data: any[] }) => JSX.Element;
+  renderItem: (props: { index: number; style: CSSProperties; data: any[] }) => ReactElement;
   className?: string;
   overscan?: number;
 }
@@ -19,9 +19,7 @@ const VirtualizedList = memo(({
   className = "",
   overscan = 5
 }: VirtualizedListProps) => {
-  const memoizedItems = useMemo(() => items, [items]);
-
-  const ItemRenderer = useCallback(({ index, style, data }: any) => {
+  const ItemRenderer = useCallback(({ index, style, data }: ListChildComponentProps) => {
     return (
       <div style={style}>
         {renderItem({ index, style, data })}
@@ -39,15 +37,15 @@ const VirtualizedList = memo(({
 
   return (
     <div className={className}>
-      <FixedSizeList
+      <List
         height={height}
         itemCount={items.length}
         itemSize={itemHeight}
-        itemData={memoizedItems}
+        itemData={items}
         overscanCount={overscan}
       >
         {ItemRenderer}
-      </FixedSizeList>
+      </List>
     </div>
   );
 });
