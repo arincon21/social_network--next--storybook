@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import VirtualizedList from '@/components/ui/virtualized-list';
+import VirtualizedList from '@/shared/components/virtualized-list';
 
 const meta = {
   title: 'UI/VirtualizedList',

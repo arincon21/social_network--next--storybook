@@ -1,5 +1,5 @@
 import { type SidebarItem } from "./sidebar-nav";
-import Icon from "@/components/ui/icon";
+import Icon from "@/shared/components/icon";
 
 interface SidebarNavItemProps {
   item: SidebarItem;

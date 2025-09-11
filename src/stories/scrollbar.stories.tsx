@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import Scrollbar from '@/components/ui/scrollbar';
+import Scrollbar from '@/shared/components/scrollbar';
 
 const meta = {
   title: 'UI/Scrollbar',

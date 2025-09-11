@@ -1,4 +1,4 @@
-import Icon from "@/components/ui/icon";
+import Icon from "@/shared/components/icon";
 
 interface SidebarToggleButtonProps {
   collapsed: boolean;

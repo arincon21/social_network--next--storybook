@@ -1,7 +1,7 @@
 "use client";
 
 import React, { memo } from "react";
-import Avatar from "@/components/ui/avatar";
+import Avatar from "@/shared/components/avatar";
 import { MoreHorizontal } from "lucide-react";
 import type { Friend } from "../constants/sidebar-right";
 

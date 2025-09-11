@@ -1,5 +1,5 @@
 import { memo } from "react";
-import OptimizedImage from "@/components/ui/optimized-image";
+import OptimizedImage from "@/shared/components/optimized-image";
 
 interface DropdownListItemProps {
   avatar?: string;

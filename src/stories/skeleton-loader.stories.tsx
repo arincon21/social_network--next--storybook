@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import SkeletonLoader from '@/components/ui/skeleton-loader';
+import SkeletonLoader from '@/shared/components/skeleton-loader';
 
 const meta = {
   title: 'UI/SkeletonLoader',

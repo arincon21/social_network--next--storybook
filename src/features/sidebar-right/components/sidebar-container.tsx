@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useMemo, useEffect } from "react";
-import Avatar from "@/components/ui/avatar";
-import Input from "../../../components/ui/input";
+import Avatar from "@/shared/components/avatar";
+import Input from "../../../shared/components/input";
 import SidebarSection from "./sidebar-section";
 import { Sliders, MessageSquare, X } from "lucide-react";
 import type { Friend } from "../constants/sidebar-right";

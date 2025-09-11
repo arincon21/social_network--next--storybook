@@ -1,7 +1,7 @@
 "use client";
 import { ReactNode, memo, useMemo } from "react";
-import SkeletonLoader from "@/components/ui/skeleton-loader";
-import Scrollbar from "@/components/ui/scrollbar";
+import SkeletonLoader from "@/shared/components/skeleton-loader";
+import Scrollbar from "@/shared/components/scrollbar";
 
 interface EnhancedDropdownContentProps {
   children?: ReactNode;

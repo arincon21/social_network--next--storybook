@@ -1,8 +1,8 @@
 "use client";
 import { ReactNode, memo, useState, useCallback, useRef } from "react";
-import { useClickOutside } from "@/hooks/use-click-outside";
+import { useClickOutside } from "@/shared/hooks/use-click-outside";
 import NotificationBadge from "./notification-badge";
-import Icon from "@/components/ui/icon";
+import Icon from "@/shared/components/icon";
 
 interface DropdownBaseProps {
   icon: string;

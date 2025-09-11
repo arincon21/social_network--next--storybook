@@ -1,6 +1,6 @@
 "use client";
 import { memo, useCallback, useMemo } from "react";
-import { notifications } from "@/constants/navbar-data";
+import { notifications } from "@/features/navbar-top/constants/navbar-data";
 import DropdownBase from "./dropdown-base";
 import DropdownHeader from "./dropdown-header";
 import EnhancedDropdownContent from "./enhanced-dropdown-content";
