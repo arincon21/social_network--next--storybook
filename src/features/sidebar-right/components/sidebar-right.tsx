@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import SidebarRightUI from "@/components/ui/sidebar-right";
-import { sampleSections } from "@/constants/sidebar-right";
+import SidebarContainer from "./sidebar-container";
+import { sampleSections } from "../constants/sidebar-right";
 
-const SidebarRight: React.FC = () => {
+const SidebarRight = () => {
   // Initialize with a default value that matches the server render.
   const [collapsed, setCollapsed] = useState(true);
   const [showContent, setShowContent] = useState(false);
@@ -39,7 +39,7 @@ const SidebarRight: React.FC = () => {
   }, [collapsed]);
 
   return (
-    <SidebarRightUI
+    <SidebarContainer
       collapsed={collapsed}
       showContent={showContent}
       sections={sampleSections}

@@ -3,7 +3,7 @@
 import React, { memo } from "react";
 import Avatar from "@/components/ui/avatar";
 import { MoreHorizontal } from "lucide-react";
-import type { Friend } from "@/constants/sidebar-right";
+import type { Friend } from "../constants/sidebar-right";
 
 type Props = {
   friend: Friend;

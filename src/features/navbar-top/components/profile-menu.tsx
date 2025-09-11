@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, FileText, Star, LogOut } from "lucide-react";
 import { useClickOutside } from "@/hooks/use-click-outside";
-import ProfileDropdown from "@/components/ui/profile-dropdown";
+import ProfileDropdown from "./profile-dropdown";
 
 const ProfileMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);

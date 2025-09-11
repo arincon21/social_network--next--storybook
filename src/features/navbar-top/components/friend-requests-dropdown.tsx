@@ -1,10 +1,10 @@
 "use client";
 import { memo, useCallback, useMemo } from "react";
 import { friendRequests } from "@/constants/navbar-data";
-import DropdownBase from "@/components/ui/dropdown-base";
-import DropdownHeader from "@/components/ui/dropdown-header";
-import EnhancedDropdownContent from "@/components/ui/enhanced-dropdown-content";
-import DropdownListItem from "@/components/ui/dropdown-list-item";
+import DropdownBase from "./dropdown-base";
+import DropdownHeader from "./dropdown-header";
+import EnhancedDropdownContent from "./enhanced-dropdown-content";
+import DropdownListItem from "./dropdown-list-item";
 
 const FriendRequestsDropdown = memo(() => {
   const handleFriendAction = useCallback((id: number | string, action: "accept" | "decline") => {

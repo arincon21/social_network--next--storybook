@@ -2,10 +2,10 @@
 
 import React, { useMemo, useEffect } from "react";
 import Avatar from "@/components/ui/avatar";
-import Input from "@/components/ui/input";
-import SidebarSection from "@/components/ui/sidebar-section";
+import Input from "../../../components/ui/input";
+import SidebarSection from "./sidebar-section";
 import { Sliders, MessageSquare, X } from "lucide-react";
-import type { Friend } from "@/constants/sidebar-right";
+import type { Friend } from "../constants/sidebar-right";
 
 type Section = { title: string; friends: Friend[] };
 
@@ -17,7 +17,7 @@ type Props = {
   onToggleExpand: () => void;
 };
 
-const SidebarRightUI: React.FC<Props> = ({ collapsed, showContent, sections, onCollapse, onToggleExpand }) => {
+const SidebarContainer = ({ collapsed, showContent, sections, onCollapse, onToggleExpand }: Props) => {
   const flatFriends = useMemo(() => sections.flatMap((s) => s.friends), [sections]);
 
   useEffect(() => {
@@ -73,4 +73,4 @@ const SidebarRightUI: React.FC<Props> = ({ collapsed, showContent, sections, onC
   );
 };
 
-export default SidebarRightUI;
+export default SidebarContainer;

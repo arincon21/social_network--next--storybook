@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import ProfileMenu from "@/components/ui/profile-menu";
-import NotificationsDropdown from "@/components/ui/notifications-dropdown";
-import MessagesDropdown from "@/components/ui/messages-dropdown";
-import FriendRequestsDropdown from "@/components/ui/friend-requests-dropdown";
-import NavbarLogo from "@/components/ui/navbar-logo";
-import NavbarSearch from "@/components/ui/navbar-search";
+import ProfileMenu from "./profile-menu";
+import NotificationsDropdown from "./notifications-dropdown";
+import MessagesDropdown from "./messages-dropdown";
+import FriendRequestsDropdown from "./friend-requests-dropdown";
+import NavbarLogo from "./navbar-logo";
+import NavbarSearch from "./navbar-search";
 
 const Navbar: React.FC = () => {
   return (

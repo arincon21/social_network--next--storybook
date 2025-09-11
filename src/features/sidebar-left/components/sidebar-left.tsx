@@ -1,10 +1,10 @@
 "use client";
 
-import { useSidebar } from "@/hooks/use-sidebar";
-import { SidebarContainer } from "@/components/ui/sidebar-container";
-import { SidebarHeader } from "@/components/ui/sidebar-header";
-import { SidebarNav } from "@/components/ui/sidebar-nav";
-import { ProfileCompletion } from "@/components/ui/profile-completion";
+import { useSidebar } from "../hooks/use-sidebar";
+import { SidebarContainer } from "./sidebar-container";
+import { SidebarHeader } from "./sidebar-header";
+import { SidebarNav } from "./sidebar-nav";
+import { ProfileCompletion } from "./profile-completion";
 
 const SidebarLeft = () => {
 

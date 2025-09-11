@@ -2,8 +2,8 @@
 
 import React, { memo } from "react";
 import { Sliders } from "lucide-react";
-import FriendRow from "@/components/ui/friend-row";
-import type { Friend } from "@/constants/sidebar-right";
+import FriendRow from "./friend-row";
+import type { Friend } from "../constants/sidebar-right";
 
 type Props = {
   title: string;
