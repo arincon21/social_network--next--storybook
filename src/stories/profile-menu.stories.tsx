@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import ProfileMenu from '@/components/ui/profile-menu';
+import ProfileMenu from '@/features/navbar-top/components/profile-menu';
 
 const meta = {
   title: 'UI/ProfileMenu',

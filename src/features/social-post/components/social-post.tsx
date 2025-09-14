@@ -38,9 +38,8 @@ const SocialPost: React.FC = () => {
 
       {/* User Info & Text Area */}
       <div className="flex items-start space-x-4 mb-6">
-        <Avatar 
-          src="https://placehold.co/48x48" 
-          alt="avatar" 
+        <Avatar
+          alt="Usuario"
           size={48}
           className="flex-shrink-0"
         />
@@ -83,14 +82,13 @@ const SocialPost: React.FC = () => {
           >
             Previsualizar
           </button>
-          <Button 
+          <Button
             variant="primary"
             onClick={handleSubmit}
             size="md"
+            disabled={!postContent.trim()}
           >
-            <span className={`${!postContent.trim() ? 'opacity-50 cursor-not-allowed' : ''}`}>
-              Publicar Estado
-            </span>
+            Publicar Estado
           </Button>
         </div>
       </div>

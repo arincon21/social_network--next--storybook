@@ -1,0 +1,1 @@
+export { default as SocialPost } from './components/social-post';

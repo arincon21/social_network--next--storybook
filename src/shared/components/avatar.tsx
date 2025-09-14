@@ -22,7 +22,16 @@ const Avatar: React.FC<AvatarProps> = ({ src, alt = "avatar", size = 40, presenc
   return (
     <div title={title} className="relative">
       <div className={`rounded-full overflow-hidden flex-shrink-0 ${className}`} style={{ width: size, height: size }}>
-        <OptimizedImage src={src || `https://placehold.co/${size}x${size}`} alt={alt} width={size} height={size} />
+        {src ? (
+          <OptimizedImage src={src} alt={alt} width={size} height={size} />
+        ) : (
+          <div
+            className="w-full h-full bg-gray-300 flex items-center justify-center text-gray-600 text-xs"
+            style={{ width: size, height: size }}
+          >
+            {alt.charAt(0).toUpperCase()}
+          </div>
+        )}
       </div>
       <span className={`absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full border-2 border-white z-10 ${presenceColor(presence)}`} />
     </div>

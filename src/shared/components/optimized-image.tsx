@@ -67,7 +67,6 @@ const OptimizedImage = memo(({
         priority={priority}
         placeholder={placeholder}
         blurDataURL={blurDataURL}
-        unoptimized
       />
     </div>
   );

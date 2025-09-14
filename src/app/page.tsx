@@ -1,9 +1,9 @@
-import BirthdayCard from "@/features/birthday-card/components/birthday-card";
-import Navbar from "@/features/navbar-top/components/navbar-top";
-import SidebarLeft from "@/features/sidebar-left/components/sidebar-left";
-import SidebarRight from "@/features/sidebar-right/components/sidebar-right";
-import SocialPost from "@/features/social-post/components/social-post";
-import WeatherForecast from "@/features/weather-chart/components/weather-chart";
+import { BirthdayCard } from "@/features/birthday-card";
+import { Navbar } from "@/features/navbar-top";
+import { SidebarLeft } from "@/features/sidebar-left";
+import { SidebarRight } from "@/features/sidebar-right";
+import { SocialPost } from "@/features/social-post";
+import { WeatherForecast } from "@/features/weather-chart";
 
 export default function Home() {
   return (

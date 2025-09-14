@@ -1,0 +1,1 @@
+export { default as WeatherForecast } from './components/weather-chart';

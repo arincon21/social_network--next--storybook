@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import MessagesDropdown from '@/components/ui/messages-dropdown';
+import MessagesDropdown from '@/features/navbar-top/components/messages-dropdown';
 
 const meta = {
   title: 'UI/MessagesDropdown',

@@ -10,7 +10,7 @@ import NavbarSearch from "./navbar-search";
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-20 h-[70px] bg-[#3f4257]">
+    <nav className="fixed top-0 left-0 right-0 z-20 h-[70px] bg-[#3f4257]" role="navigation" aria-label="Navegación principal">
       <div className="mx-auto h-full px-4 flex items-center gap-4">
         {/* Left: Page title / logo */}
         <div className="w-[300px] flex items-center gap-4 pl-[80px]">

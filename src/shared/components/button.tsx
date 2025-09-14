@@ -5,9 +5,10 @@ interface ButtonProps {
     variant?: 'primary' | 'secondary';
     size?: 'md' | 'lg';
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    disabled?: boolean;
 }
 
-const Button = ({ children, variant = 'primary', size = 'md', onClick }: ButtonProps) => {
+const Button = ({ children, variant = 'primary', size = 'md', onClick, disabled = false }: ButtonProps) => {
     const baseClasses = 'rounded-[5px] font-medium transition-colors cursor-pointer flex justify-center items-center px-[30px] relative overflow-hidden';
     const variantClasses = {
         primary: 'bg-[#ff5e3a] text-white hover:bg-[#ff763a] border border-[#ff5e3a] hover:border-[#ff763a]',
@@ -19,6 +20,8 @@ const Button = ({ children, variant = 'primary', size = 'md', onClick }: ButtonP
     };
 
     const createRipple = (event: React.MouseEvent<HTMLButtonElement>) => {
+        if (disabled) return;
+
         const button = event.currentTarget;
         const circle = document.createElement("span");
         const diameter = Math.max(button.clientWidth, button.clientHeight);
@@ -43,7 +46,11 @@ const Button = ({ children, variant = 'primary', size = 'md', onClick }: ButtonP
     }
 
     return (
-        <button onClick={createRipple} className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]}`} >
+        <button
+            onClick={createRipple}
+            disabled={disabled}
+            className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+        >
             { children }
         </button>
     );
