@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Social Network - Next.js & Storybook
 
-## Getting Started
+Una aplicación de red social moderna construida con Next.js 15, React 19 y Storybook, diseñada para demostrar mejores prácticas en desarrollo de componentes reutilizables y arquitectura modular.
 
-First, run the development server:
+## Características Principales
+
+- **Posts Sociales**: Sistema de publicaciones con interacciones sociales
+- **Pronóstico del Clima**: Widget integrado con datos meteorológicos
+- **Tarjetas de Cumpleaños**: Notificaciones y celebraciones de cumpleaños
+- **Navegación Avanzada**: Navbar con dropdowns para mensajes, notificaciones y perfil
+- **Sidebars Responsivas**: Paneles laterales con navegación y contenido adicional
+- **Componentes Reutilizables**: Biblioteca de componentes UI compartidos
+- **Storybook Integration**: Desarrollo y documentación de componentes aislados
+
+## Tecnologías Utilizadas
+
+### Core
+- **Next.js 15.5.2** - Framework React con App Router
+- **React 19.1.0** - Biblioteca para interfaces de usuario
+- **TypeScript 5** - Tipado estático para JavaScript
+
+### UI & Estilos
+- **Tailwind CSS 4** - Framework de CSS utilitario
+- **Lucide React** - Iconos SVG modernos
+
+### Desarrollo & Testing
+- **Storybook 9.1.5** - Herramienta para desarrollo de componentes
+- **Vitest** - Framework de testing rápido
+- **Playwright** - Testing end-to-end
+- **ESLint** - Linting y formateo de código
+
+### Optimización
+- **React Window** - Virtualización para listas grandes
+- **Turbopack** - Empaquetador rápido para desarrollo
+
+## Instalación
+
+Asegúrate de tener Node.js (versión 18+) instalado. Este proyecto usa pnpm como gestor de paquetes.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clona el repositorio
+git clone <url-del-repositorio>
+cd social_network--next--storybook
+
+# Instala dependencias
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Uso
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Desarrollo Local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Inicia el servidor de desarrollo:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Storybook
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para desarrollar y visualizar componentes de forma aislada:
 
-## Deploy on Vercel
+```bash
+pnpm storybook
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Abre [http://localhost:6006](http://localhost:6006) para acceder a Storybook.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Build de Producción
+
+```bash
+pnpm build
+pnpm start
+```
+
+### Testing
+
+```bash
+# Ejecutar tests con Vitest
+pnpm test
+
+# Ejecutar linting
+pnpm lint
+```
+
+## Estructura del Proyecto
+
+```
+src/
+├── app/                    # Páginas y layouts de Next.js
+│   ├── layout.tsx         # Layout principal
+│   ├── page.tsx           # Página de inicio
+│   └── globals.css        # Estilos globales
+├── features/              # Funcionalidades modulares
+│   ├── birthday-card/     # Componente de cumpleaños
+│   ├── navbar-top/        # Barra de navegación superior
+│   ├── sidebar-left/      # Panel lateral izquierdo
+│   ├── sidebar-right/     # Panel lateral derecho
+│   ├── social-post/       # Sistema de posts sociales
+│   └── weather-chart/     # Widget de clima
+├── shared/                # Componentes y hooks compartidos
+│   ├── components/        # Componentes UI reutilizables
+│   └── hooks/            # Hooks personalizados
+└── stories/               # Historias de Storybook
+```
+
+## Scripts Disponibles
+
+- `pnpm dev` - Inicia servidor de desarrollo
+- `pnpm build` - Construye la aplicación para producción
+- `pnpm start` - Inicia servidor de producción
+- `pnpm lint` - Ejecuta ESLint
+- `pnpm storybook` - Inicia Storybook
+- `pnpm build-storybook` - Construye Storybook estáticamente
+
+## Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -am 'Agrega nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## Despliegue
+
+La aplicación está optimizada para desplegar en Vercel, pero puede desplegarse en cualquier plataforma que soporte Next.js.
+
+Para más información sobre despliegue, consulta la [documentación de Next.js](https://nextjs.org/docs/app/building-your-application/deploying).
