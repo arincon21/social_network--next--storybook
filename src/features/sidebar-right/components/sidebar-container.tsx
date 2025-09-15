@@ -43,7 +43,11 @@ const SidebarContainer = ({ collapsed, showContent, sections, onCollapse, onTogg
           <div className="px-4 pb-4  space-y-4 min-h-full flex flex-col justify-between">
             <div className="h-full">
               {sections.map((section) => (
-                <SidebarSection key={section.title} title={section.title} friends={section.friends} />
+                <SidebarSection
+                  key={section.title}
+                  title={section.title}
+                  friends={section.friends}
+                />
               ))}
             </div>
 
