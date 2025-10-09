@@ -20,8 +20,6 @@ interface ScrollbarProps {
   scrollbarWidth?: string;
   /** Position of scrollbar ('left' | 'right') */
   position?: 'left' | 'right';
-  /** Disable fade effects at top/bottom */
-  disableFadeEffects?: boolean;
 }
 
 interface ScrollState {
@@ -42,7 +40,6 @@ const Scrollbar = ({
   thumbHoverColor = "hover:bg-gray-700",
   scrollbarWidth = "w-1",
   position = "left",
-  disableFadeEffects = false
 }: ScrollbarProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -214,24 +211,6 @@ const Scrollbar = ({
         <div ref={contentRef} className="relative">
           {children}
         </div>
-        
-        {/* Configurable scroll fade effects */}
-        {!disableFadeEffects && scrollState.canScroll && (
-          <>
-            {/* Top fade */}
-            <div 
-              className={`absolute top-0 left-0 right-0 h-3 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none z-5 transition-opacity duration-200 ${
-                scrollState.scrollPercentage > 2 ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-            {/* Bottom fade */}
-            <div 
-              className={`absolute bottom-0 left-0 right-0 h-3 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none z-5 transition-opacity duration-200 ${
-                scrollState.scrollPercentage < 98 ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-          </>
-        )}
       </div>
     </div>
   );

@@ -35,7 +35,7 @@ const SidebarContainer = ({ collapsed, showContent, sections, onCollapse, onTogg
           <div className="flex flex-col items-center gap-4 py-4">
             {flatFriends.map((f) => (
               <div key={f.id} title={f.name} className="relative">
-                <Avatar src={f.avatar} alt={f.name} size={40} presence={f.presence} />
+                <Avatar src={f.avatar} alt={f.name} size={40} presence={f.presence} showPresence={true} />
               </div>
             ))}
           </div>

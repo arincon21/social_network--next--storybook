@@ -9,6 +9,7 @@ import { SidebarRight } from "@/features/sidebar-right";
 import { SocialPost } from "@/features/social-post";
 import { WeatherForecast } from "@/features/weather-chart";
 import { motion } from "framer-motion";
+import ScrollToTopButton from "@/shared/components/scroll-to-top-button";
 
 export default function Home() {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
           </motion.aside>
         </motion.main>
       </div>
+      <ScrollToTopButton />
     </>
   );
 }

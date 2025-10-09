@@ -16,7 +16,7 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({
 }) => {
   return (
     <div 
-      className={`relative max-w-md mx-auto p-8 text-white rounded-sm overflow-hidden ${className}`}
+      className={`relative max-w-md mx-auto p-6 text-white rounded-sm overflow-hidden ${className}`}
       style={{ 
         backgroundImage: `url('${backgroundImage}')`, 
         backgroundSize: 'cover', 

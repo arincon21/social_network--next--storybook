@@ -12,12 +12,13 @@ type AvatarProps = {
   presence?: Presence;
   title?: string;
   className?: string;
+  showPresence?: boolean; // default false
 };
 
 const presenceColor = (p?: Presence) =>
   p === "online" ? "bg-[#2ecc71]" : p === "away" ? "bg-[#ffcc4d]" : p === "offline" ? "bg-[#ff6b6b]" : "bg-[#cfd6e6]";
 
-const Avatar: React.FC<AvatarProps> = ({ src, alt = "avatar", size = 40, presence, title, className = "" }) => {
+const Avatar: React.FC<AvatarProps> = ({ src, alt = "avatar", size = 40, presence, title, className = "", showPresence = false }) => {
   // next/image needs numeric width/height passed to OptimizedImage
   return (
     <div title={title} className="relative">
@@ -33,7 +34,11 @@ const Avatar: React.FC<AvatarProps> = ({ src, alt = "avatar", size = 40, presenc
           </div>
         )}
       </div>
-      <span className={`absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full border-2 border-white z-10 ${presenceColor(presence)}`} />
+      {
+        showPresence && (
+          <span className={`absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full border-2 border-white z-10 ${presenceColor(presence)}`} />
+        )
+      }
     </div>
   );
 };

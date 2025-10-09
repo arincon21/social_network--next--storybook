@@ -13,7 +13,7 @@ const FriendRow: React.FC<Props> = ({ friend }) => {
   return (
     <div role="listitem" className="flex items-center justify-between gap-3 px-2 py-2 rounded-md hover:bg-gray-50">
       <div className="flex items-center gap-3">
-        <Avatar src={friend.avatar} alt={friend.name} size={40} presence={friend.presence} />
+        <Avatar src={friend.avatar} alt={friend.name} size={40} presence={friend.presence} showPresence={true} />
         <div className="min-w-0">
           <div className="font-semibold text-sm text-[#2e3350] truncate">{friend.name}</div>
           <div className="text-xs uppercase text-[#9aa0b3]">{friend.status}</div>
