@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import { Camera, Monitor, MapPin, MoreHorizontal, MessageSquare, Image as ImageIcon, FileText } from 'lucide-react';
 import Avatar from '@/shared/components/avatar';
 import Button from '@/shared/components/button';
 import Tabs, { TabItem } from '@/shared/components/tabs';
@@ -9,6 +8,7 @@ import Textarea from '@/shared/components/textarea';
 import IconButton from '@/shared/components/icon-button';
 import { useSocialPost } from '../hooks/use-social-post';
 import Card from '@/shared/components/card';
+import Icon from '@/shared/components/icon';
 
 const SocialPost: React.FC = () => {
   const {
@@ -21,16 +21,15 @@ const SocialPost: React.FC = () => {
   } = useSocialPost();
 
   const tabs: TabItem[] = [
-    { id: 'status', label: 'Estado', icon: MessageSquare, color: 'text-orange-500' },
-    { id: 'multimedia', label: 'Multimedia', icon: ImageIcon, color: 'text-gray-400' },
-    { id: 'blog', label: 'Entrada de blog', icon: FileText, color: 'text-gray-400' }
+    { id: 'status', label: 'Estado', icon: "olymp-status-icon", color: 'text-orange-500' },
+    { id: 'multimedia', label: 'Multimedia', icon: "olymp-multimedia-icon", color: 'text-gray-400' },
+    { id: 'blog', label: 'Entrada de blog', icon: "olymp-blog-icon", color: 'text-gray-400' }
   ];
 
   return (
     <Card>
-      <div className='p-6'>
         {/* Tabs */}
-        <div className="-mx-6 -mt-6 mb-6">
+        <div className="-mx-6 -mt-6 mb-6 p-6 pb-0 border-b border-[#e6ecf5]">
           <Tabs
             tabs={tabs}
             activeTab={activeTab}
@@ -39,7 +38,7 @@ const SocialPost: React.FC = () => {
         </div>
 
         {/* User Info & Text Area */}
-        <div className="flex items-start space-x-4 mb-6">
+        <div className="flex items-start space-x-4 mb-6 px-6">
           <Avatar
             alt="Usuario"
             size={48}
@@ -50,51 +49,45 @@ const SocialPost: React.FC = () => {
               value={postContent}
               onChange={(e) => handleContentChange(e.target.value)}
               placeholder="Comparte lo que estás pensando aquí..."
-              className="h-32"
+              className="h-32 text-[14px]"
               rows={4}
             />
           </div>
         </div>
 
         {/* Bottom Actions */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-          <div className="flex items-center space-x-6">
+        <div className="flex items-center justify-between pt-4 border-t border-gray-200 p-6">
+          <div className="flex items-center space-x-4">
             <IconButton
-              icon={Camera}
+              icon={<Icon name="olymp-camera-icon" className='w-5 h-5 text-gray-400'/>}
               ariaLabel="Subir imagen"
             />
             <IconButton
-              icon={Monitor}
+              icon={<Icon name="olymp-computer-icon" className='w-5 h-5 text-gray-400'/>}
               ariaLabel="Subir video"
             />
             <IconButton
-              icon={MapPin}
+              icon={<Icon name="olymp-small-pin-icon" className='w-5 h-5 text-gray-400'/>}
               ariaLabel="Añadir ubicación"
-            />
-            <IconButton
-              icon={MoreHorizontal}
-              ariaLabel="Más opciones"
             />
           </div>
           <div className="flex items-center space-x-3">
-            <button
+            <Button
               onClick={handlePreview}
-              className="px-6 py-2.5 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition-colors font-medium"
-              type="button"
+              variant='secondary'
             >
               Previsualizar
-            </button>
+            </Button>
             <Button
               variant="primary"
               onClick={handleSubmit}
-              size="md"
               disabled={!postContent.trim()}
             >
               Publicar Estado
             </Button>
           </div>
         </div>
-      </div>
+
 
     </Card>
   );

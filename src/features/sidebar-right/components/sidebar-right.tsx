@@ -3,12 +3,19 @@
 import React, { useEffect, useState } from "react";
 import SidebarContainer from "./sidebar-container";
 import { sampleSections } from "../constants/sidebar-right";
+import { useClickOutside } from "@/shared/hooks/use-click-outside";
 
 const SidebarRight = () => {
   // Initialize with a default value that matches the server render.
   const [collapsed, setCollapsed] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+
+  const ref = useClickOutside<HTMLElement>(() => {
+    if (!collapsed) {
+      setCollapsed(true);
+    }
+  });
 
   // After the component mounts on the client, we can safely access localStorage.
   useEffect(() => {
@@ -40,6 +47,7 @@ const SidebarRight = () => {
 
   return (
     <SidebarContainer
+      ref={ref}
       collapsed={collapsed}
       showContent={showContent}
       sections={sampleSections}

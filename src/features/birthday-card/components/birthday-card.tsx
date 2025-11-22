@@ -3,6 +3,7 @@ import { MoreHorizontal, Cake } from "lucide-react";
 import BackgroundCard from '@/shared/components/background-card';
 import ProfileAvatar from '@/shared/components/profile-avatar';
 import IconButton from '@/shared/components/icon-button';
+import Icon from '@/shared/components/icon';
 
 interface BirthdayCardProps {
   name?: string;
@@ -22,7 +23,7 @@ const BirthdayCard: React.FC<BirthdayCardProps> = ({
       <div className="flex justify-between items-start mb-8">
         <Cake className="w-8 h-8 text-white" />
         <IconButton 
-          icon={MoreHorizontal}
+          icon={<Icon name="olymp-three-dots-icon" className='w-5 h-5 text-gray-100'/>}
           ariaLabel="Más opciones"
           className="hover:bg-white/10"
         />

@@ -31,6 +31,11 @@ const Button = ({ children, variant = 'primary', size = 'md', onClick, disabled 
         circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
         circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
         circle.classList.add("ripple");
+        
+        // Apply variant-specific ripple color
+        if (variant === 'secondary') {
+            circle.style.backgroundColor = 'rgba(136, 141, 168, 0.2)';
+        }
 
         const ripple = button.getElementsByClassName("ripple")[0];
 

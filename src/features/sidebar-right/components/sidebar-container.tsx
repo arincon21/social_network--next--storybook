@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo, useEffect, forwardRef } from "react";
 import Avatar from "@/shared/components/avatar";
 import Input from "../../../shared/components/input";
 import SidebarSection from "./sidebar-section";
@@ -17,7 +17,7 @@ type Props = {
   onToggleExpand: () => void;
 };
 
-const SidebarContainer = ({ collapsed, showContent, sections, onCollapse, onToggleExpand }: Props) => {
+const SidebarContainer = forwardRef<HTMLElement, Props>(({ collapsed, showContent, sections, onCollapse, onToggleExpand }, ref) => {
   const flatFriends = useMemo(() => sections.flatMap((s) => s.friends), [sections]);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const SidebarContainer = ({ collapsed, showContent, sections, onCollapse, onTogg
   }, [onCollapse]);
 
   return (
-    <aside className={`fixed flex flex-col top-[70px] right-0 z-20 h-[calc(100vh-70px)] bg-white shadow-[0_0_34px_0_rgba(63,66,87,0.1)] transition-all duration-300 ease-in-out overflow-hidden ${collapsed ? "w-[70px]" : "w-[320px]"}`}>
+    <aside ref={ref} className={`fixed flex flex-col top-[70px] right-0 z-20 h-[calc(100vh-70px)] bg-white shadow-[0_0_34px_0_rgba(63,66,87,0.1)] transition-all duration-300 ease-in-out overflow-hidden ${collapsed ? "w-[70px]" : "w-[320px]"}`}>
       <div className="flex-1 overflow-y-auto w-full">
         {collapsed ? (
           <div className="flex flex-col items-center gap-4 py-4">
@@ -75,6 +75,8 @@ const SidebarContainer = ({ collapsed, showContent, sections, onCollapse, onTogg
       </div>
     </aside>
   );
-};
+});
+
+SidebarContainer.displayName = "SidebarContainer";
 
 export default SidebarContainer;
