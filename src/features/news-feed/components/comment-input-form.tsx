@@ -39,7 +39,7 @@ const CommentInputForm = ({
       <div className="bg-white">
         <div className="flex items-start space-x-4">
           <Avatar
-            src="https://placehold.co/40x40"
+            src="/assets/images/avatar-placeholder.png"
             alt="Tu avatar"
             size={40}
           />

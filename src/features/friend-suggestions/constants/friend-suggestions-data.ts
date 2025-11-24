@@ -13,7 +13,7 @@ export const friendSuggestionsData: FriendSuggestion[] = [
   {
     id: '1',
     name: 'Ana García',
-    avatar: 'https://placehold.co/48x48',
+    avatar: '/assets/images/avatar-placeholder.png',
     mutualFriends: 5,
     mutualFriendsList: ['María López', 'Carlos Ruiz', 'Elena Martín'],
     isOnline: true,
@@ -22,7 +22,7 @@ export const friendSuggestionsData: FriendSuggestion[] = [
   {
     id: '2',
     name: 'Pedro Sánchez',
-    avatar: 'https://placehold.co/48x48',
+    avatar: '/assets/images/avatar-placeholder.png',
     mutualFriends: 3,
     mutualFriendsList: ['Juan Pérez', 'Laura Gómez'],
     isOnline: false,
@@ -32,7 +32,7 @@ export const friendSuggestionsData: FriendSuggestion[] = [
   {
     id: '3',
     name: 'Carmen Rodríguez',
-    avatar: 'https://placehold.co/48x48',
+    avatar: '/assets/images/avatar-placeholder.png',
     mutualFriends: 8,
     mutualFriendsList: ['Ana García', 'María López', 'Carlos Ruiz', 'Elena Martín', 'Juan Pérez'],
     isOnline: true,
@@ -41,7 +41,7 @@ export const friendSuggestionsData: FriendSuggestion[] = [
   {
     id: '4',
     name: 'Miguel Torres',
-    avatar: 'https://placehold.co/48x48',
+    avatar: '/assets/images/avatar-placeholder.png',
     mutualFriends: 2,
     mutualFriendsList: ['Laura Gómez', 'Carlos Ruiz'],
     isOnline: false,
@@ -51,7 +51,7 @@ export const friendSuggestionsData: FriendSuggestion[] = [
   {
     id: '5',
     name: 'Isabel Fernández',
-    avatar: 'https://placehold.co/48x48',
+    avatar: '/assets/images/avatar-placeholder.png',
     mutualFriends: 4,
     mutualFriendsList: ['Ana García', 'Pedro Sánchez', 'María López'],
     isOnline: true,
@@ -60,7 +60,7 @@ export const friendSuggestionsData: FriendSuggestion[] = [
   {
     id: '6',
     name: 'Roberto Díaz',
-    avatar: 'https://placehold.co/48x48',
+    avatar: '/assets/images/avatar-placeholder.png',
     mutualFriends: 6,
     mutualFriendsList: ['Carlos Ruiz', 'Elena Martín', 'Juan Pérez', 'Laura Gómez', 'Pedro Sánchez'],
     isOnline: false,

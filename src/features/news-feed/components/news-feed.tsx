@@ -104,7 +104,7 @@ const NewsFeed = () => {
                   {post.likes.users.slice(0, 3).map((user, index) => (
                     <Avatar
                       key={index}
-                      src={`https://placehold.co/24x24`}
+                      src={`/assets/images/avatar-placeholder.png`}
                       alt={`Avatar de ${user}`}
                       size={24}
                       className="border-2 border-white"
@@ -199,7 +199,7 @@ const NewsFeed = () => {
               handleAddComment={handleAddComment}
             />
           )}
-          
+
         </div>
       ))}
     </div>

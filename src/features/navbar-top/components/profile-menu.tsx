@@ -24,7 +24,7 @@ const ProfileMenu: React.FC = () => {
       >
         <div className="relative w-10 h-10">
           <Image
-            src="https://placehold.co/35x35"
+            src="/assets/images/avatar-placeholder.png"
             alt="Avatar"
             width={35}
             height={35}

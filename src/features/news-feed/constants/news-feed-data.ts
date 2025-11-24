@@ -22,18 +22,18 @@ export interface Post {
 export const initialPosts: Post[] = [
   {
     id: 1,
-    author: { name: 'Elaine Dreyfuss', avatar: 'https://placehold.co/48x48' },
+    author: { name: 'Elaine Dreyfuss', avatar: '/assets/images/avatar-placeholder.png' },
     timeAgo: 'hace 9 horas',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris consequat.',
-    image: 'https://placehold.co/600x800',
+    image: '/assets/images/post-placeholder.png',
     likes: { count: 24, users: ['Tú', 'Elaine'], isLiked: false },
     comments: 17,
     shares: 24,
     commentsList: [
       {
         id: 1,
-        author: { name: 'James Spiegel', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'James Spiegel', avatar: '/assets/images/avatar-placeholder.png' },
         content: '¡Buena publicación! Estoy de acuerdo con la mayor parte de esto.',
         timeAgo: 'hace 2 horas',
         likes: 2,
@@ -41,7 +41,7 @@ export const initialPosts: Post[] = [
       },
       {
         id: 2,
-        author: { name: 'Mathilda Brinker', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
         content: 'Buen punto, gracias por compartir.',
         timeAgo: 'hace 1 hora',
         likes: 1,
@@ -49,7 +49,7 @@ export const initialPosts: Post[] = [
       },
       {
         id: 3,
-        author: { name: 'Mathilda Brinker', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
         content: 'Buen punto, gracias por compartir.',
         timeAgo: 'hace 1 hora',
         likes: 1,
@@ -57,7 +57,7 @@ export const initialPosts: Post[] = [
       },
       {
         id: 4,
-        author: { name: 'Mathilda Brinker', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
         content: 'Buen punto, gracias por compartir.',
         timeAgo: 'hace 1 hora',
         likes: 1,
@@ -65,7 +65,7 @@ export const initialPosts: Post[] = [
       },
       {
         id: 5,
-        author: { name: 'Mathilda Brinker', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
         content: 'Buen punto, gracias por compartir.',
         timeAgo: 'hace 1 hora',
         likes: 1,
@@ -73,7 +73,7 @@ export const initialPosts: Post[] = [
       },
       {
         id: 6,
-        author: { name: 'Mathilda Brinker', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
         content: 'Buen punto, gracias por compartir.',
         timeAgo: 'hace 1 hora',
         likes: 1,
@@ -81,7 +81,7 @@ export const initialPosts: Post[] = [
       },
       {
         id: 7,
-        author: { name: 'Mathilda Brinker', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
         content: 'Buen punto, gracias por compartir.',
         timeAgo: 'hace 1 hora',
         likes: 1,
@@ -91,7 +91,7 @@ export const initialPosts: Post[] = [
   },
   {
     id: 2,
-    author: { name: 'James Spiegel', avatar: 'https://placehold.co/48x48' },
+    author: { name: 'James Spiegel', avatar: '/assets/images/avatar-placeholder.png' },
     timeAgo: 'hace 38 minutos',
     content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.',
     likes: { count: 3, users: [], isLiked: false },
@@ -100,7 +100,7 @@ export const initialPosts: Post[] = [
     commentsList: [
       {
         id: 3,
-        author: { name: 'Elaine Dreyfuss', avatar: 'https://placehold.co/36x36' },
+        author: { name: 'Elaine Dreyfuss', avatar: '/assets/images/avatar-placeholder.png' },
         content: 'Respuesta',
         timeAgo: 'hace 30 minutos',
         likes: 0,
@@ -110,7 +110,7 @@ export const initialPosts: Post[] = [
   },
   {
     id: 3,
-    author: { name: 'Mathilda Brinker', avatar: 'https://placehold.co/48x48' },
+    author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
     timeAgo: 'hace 1 hora',
     content:
       'Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.',

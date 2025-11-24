@@ -12,18 +12,18 @@ interface BirthdayCardProps {
 
 const BirthdayCard: React.FC<BirthdayCardProps> = ({
   name = "Marina Valentine",
-  profileImage = "https://placehold.co/60x60"
+  profileImage = "/assets/images/avatar-placeholder.png"
 }) => {
   return (
-    <BackgroundCard 
+    <BackgroundCard
       backgroundImage="/assets/bg/bg-birthdays.jpg"
       alt="Fondo de cumpleaños"
     >
       {/* Encabezado con ícono de corona y menú */}
       <div className="flex justify-between items-start mb-8">
         <Cake className="w-8 h-8 text-white" />
-        <IconButton 
-          icon={<Icon name="olymp-three-dots-icon" className='w-5 h-5 text-gray-100'/>}
+        <IconButton
+          icon={<Icon name="olymp-three-dots-icon" className='w-5 h-5 text-gray-100' />}
           ariaLabel="Más opciones"
           className="hover:bg-white/10"
         />
@@ -46,11 +46,11 @@ const BirthdayCard: React.FC<BirthdayCardProps> = ({
         <p className="text-white/90 font-medium text-2xl">
           Hoy es
         </p>
-        
+
         <h1 className="font-bold leading-tight">
           ¡El cumpleaños de {name}!
         </h1>
-        
+
         <p className="text-white/90 leading-relaxed pt-4">
           ¡Déjale un mensaje con tus mejores deseos en su página de perfil!
         </p>
