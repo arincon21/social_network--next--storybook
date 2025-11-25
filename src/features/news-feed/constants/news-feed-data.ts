@@ -27,7 +27,11 @@ export const initialPosts: Post[] = [
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris consequat.',
     image: '/assets/images/post-placeholder.png',
-    likes: { count: 24, users: ['Tú', 'Elaine'], isLiked: false },
+    likes: {
+      count: 24,
+      users: ['Tú', 'Elaine', 'Juan Pérez', 'María García', 'Carlos López', 'Ana Martínez', 'Pedro Sánchez', 'Lucía Fernández', 'Miguel Ángel'],
+      isLiked: false
+    },
     comments: 17,
     shares: 24,
     commentsList: [
@@ -47,46 +51,6 @@ export const initialPosts: Post[] = [
         likes: 1,
         isLiked: false,
       },
-      {
-        id: 3,
-        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
-        content: 'Buen punto, gracias por compartir.',
-        timeAgo: 'hace 1 hora',
-        likes: 1,
-        isLiked: false,
-      },
-      {
-        id: 4,
-        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
-        content: 'Buen punto, gracias por compartir.',
-        timeAgo: 'hace 1 hora',
-        likes: 1,
-        isLiked: false,
-      },
-      {
-        id: 5,
-        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
-        content: 'Buen punto, gracias por compartir.',
-        timeAgo: 'hace 1 hora',
-        likes: 1,
-        isLiked: false,
-      },
-      {
-        id: 6,
-        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
-        content: 'Buen punto, gracias por compartir.',
-        timeAgo: 'hace 1 hora',
-        likes: 1,
-        isLiked: false,
-      },
-      {
-        id: 7,
-        author: { name: 'Mathilda Brinker', avatar: '/assets/images/avatar-placeholder.png' },
-        content: 'Buen punto, gracias por compartir.',
-        timeAgo: 'hace 1 hora',
-        likes: 1,
-        isLiked: false,
-      },
     ],
   },
   {
@@ -94,7 +58,7 @@ export const initialPosts: Post[] = [
     author: { name: 'James Spiegel', avatar: '/assets/images/avatar-placeholder.png' },
     timeAgo: 'hace 38 minutos',
     content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.',
-    likes: { count: 3, users: [], isLiked: false },
+    likes: { count: 3, users: ['Ana López', 'Carlos Ruiz', 'Elena Díaz'], isLiked: false },
     comments: 3,
     shares: 0,
     commentsList: [
@@ -114,7 +78,11 @@ export const initialPosts: Post[] = [
     timeAgo: 'hace 1 hora',
     content:
       'Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.',
-    likes: { count: 8, users: [], isLiked: false },
+    likes: {
+      count: 8,
+      users: ['Pedro Gómez', 'Lucía Martín', 'Sofía Hernández', 'Miguel Torres', 'Isabel Romero', 'David Ruiz', 'Carmen Navarro', 'Fernando Gil'],
+      isLiked: false
+    },
     comments: 0,
     shares: 0,
   },
