@@ -108,7 +108,6 @@ const PostItem = ({
                                 width={600}
                                 height={800}
                                 className="object-cover rounded-sm"
-                                unoptimized
                             />
                         </div>
                     )}
@@ -157,10 +156,13 @@ const PostItem = ({
                         </div>
 
                         <div className="flex items-center space-x-6 text-gray-400">
-                            <div className="flex items-center space-x-2">
-                                <MessageSquare className="w-5 h-5 text-gray-400" />
+                            <button
+                                className="flex items-center space-x-2 hover:text-primary transition-colors cursor-pointer"
+                                onClick={() => setShowCommentForm(!showCommentForm)}
+                            >
+                                <MessageSquare className="w-5 h-5" />
                                 <span className="text-sm">{post.comments}</span>
-                            </div>
+                            </button>
                             <div className="flex items-center space-x-2">
                                 <Share2 className="w-5 h-5 text-gray-400" />
                                 <span className="text-sm">{post.shares}</span>
@@ -206,7 +208,7 @@ const PostItem = ({
 
                         {post.commentsList.length > 2 && !showAllComments && (
                             <div
-                                className="p-3 text-center cursor-pointer border-b border-gray-300"
+                                className="p-3 text-center cursor-pointer border-b border-gray-300 hover:bg-gray-50 transition-colors"
                                 onClick={() => {
                                     setShowAllComments(true);
                                     setShowCommentForm(true);
@@ -216,6 +218,22 @@ const PostItem = ({
                             </div>
                         )}
                     </>
+                )}
+
+                {!showCommentForm && (
+                    <div
+                        className="p-4 cursor-pointer hover:bg-gray-50 transition-colors border-t border-gray-100"
+                        onClick={() => setShowCommentForm(true)}
+                    >
+                        <div className="flex items-center space-x-3 text-gray-400">
+                            <Avatar
+                                src="/assets/images/avatar-placeholder.png"
+                                alt="Tu avatar"
+                                size={32}
+                            />
+                            <span className="text-sm">Escribe un comentario...</span>
+                        </div>
+                    </div>
                 )}
 
                 {showCommentForm && (

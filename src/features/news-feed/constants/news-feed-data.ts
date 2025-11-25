@@ -32,7 +32,7 @@ export const initialPosts: Post[] = [
       users: ['Tú', 'Elaine', 'Juan Pérez', 'María García', 'Carlos López', 'Ana Martínez', 'Pedro Sánchez', 'Lucía Fernández', 'Miguel Ángel'],
       isLiked: false
     },
-    comments: 17,
+    comments: 5,
     shares: 24,
     commentsList: [
       {
@@ -49,6 +49,30 @@ export const initialPosts: Post[] = [
         content: 'Buen punto, gracias por compartir.',
         timeAgo: 'hace 1 hora',
         likes: 1,
+        isLiked: false,
+      },
+      {
+        id: 3,
+        author: { name: 'Carlos Ruiz', avatar: '/assets/images/avatar-placeholder.png' },
+        content: 'Totalmente de acuerdo.',
+        timeAgo: 'hace 50 minutos',
+        likes: 0,
+        isLiked: false,
+      },
+      {
+        id: 4,
+        author: { name: 'Ana López', avatar: '/assets/images/avatar-placeholder.png' },
+        content: 'Interesante perspectiva.',
+        timeAgo: 'hace 45 minutos',
+        likes: 1,
+        isLiked: false,
+      },
+      {
+        id: 5,
+        author: { name: 'Pedro Sánchez', avatar: '/assets/images/avatar-placeholder.png' },
+        content: 'Gracias por la info.',
+        timeAgo: 'hace 30 minutos',
+        likes: 0,
         isLiked: false,
       },
     ],

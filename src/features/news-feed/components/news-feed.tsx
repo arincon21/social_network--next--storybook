@@ -1,11 +1,10 @@
 'use client';
 
-import { useNewsFeed } from '../hooks/use-news-feed';
-import { initialPosts } from '../constants/news-feed-data';
+import { NewsFeedProvider, useNewsFeedContext } from '../context/news-feed-context';
 import PostItem from './post-item';
 
-const NewsFeed = () => {
-  const { posts, toggleLike, toggleCommentLike, addComment, sharePost } = useNewsFeed(initialPosts);
+const NewsFeedContent = () => {
+  const { posts, toggleLike, toggleCommentLike, addComment, sharePost } = useNewsFeedContext();
 
   return (
     <div className="mb-[80px]">
@@ -20,6 +19,14 @@ const NewsFeed = () => {
         />
       ))}
     </div>
+  );
+};
+
+const NewsFeed = () => {
+  return (
+    <NewsFeedProvider>
+      <NewsFeedContent />
+    </NewsFeedProvider>
   );
 };
 
