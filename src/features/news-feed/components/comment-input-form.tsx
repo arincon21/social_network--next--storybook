@@ -2,6 +2,7 @@ import { MessageSquare } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import Avatar from '@/shared/components/avatar';
 import Button from '@/shared/components/button';
+import Icon from '@/shared/components/icon';
 
 interface CommentInputFormProps {
   postId: number;
@@ -59,7 +60,7 @@ const CommentInputForm = ({
                 aria-label="Enviar comentario"
                 onClick={() => handleAddComment(postId)}
               >
-                <MessageSquare className="w-5 h-5" />
+                <Icon name="olymp-camera-icon" className='w-[18px] h-[18px]' />
               </button>
             </div>
 

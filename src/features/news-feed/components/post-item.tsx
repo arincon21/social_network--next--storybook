@@ -1,7 +1,5 @@
 'use client';
 
-'use client';
-
 import { Heart, MessageSquare, Share2, MoreHorizontal } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -9,6 +7,7 @@ import Avatar from '@/shared/components/avatar';
 import { Post } from '../constants/news-feed-data';
 import CommentInputForm from './comment-input-form';
 import Modal from '@/shared/components/modal';
+import Icon from '@/shared/components/icon';
 
 interface PostItemProps {
     post: Post;
@@ -49,28 +48,28 @@ const PostItem = ({
             >
                 <div className="p-6">
                     {/* Botones flotantes derecha */}
-                    <div className="absolute right-[-20px] top-[18px] flex flex-col items-center space-y-2">
+                    <div className="absolute right-[-18px] top-[18px] flex flex-col items-center space-y-2">
                         <button
                             className={`w-9 h-9 cursor-pointer rounded-full bg-[#9a9fbf] flex items-center justify-center shadow-sm text-white transition-colors hover:bg-amber-600 ${post.likes.isLiked ? 'bg-amber-600' : ''
                                 }`}
                             onClick={onToggleLike}
                             aria-label={post.likes.isLiked ? 'Quitar like' : 'Dar like'}
                         >
-                            <Heart className={`w-4 h-4 ${post.likes.isLiked ? 'fill-current' : ''}`} />
+                            <Icon name="olymp-like-post-icon" className='w-[18px] h-[18px]' />
                         </button>
                         <button
                             className="w-9 h-9 hover:bg-amber-600 cursor-pointer rounded-full bg-[#9a9fbf] flex items-center justify-center shadow-sm text-white"
                             onClick={() => setShowCommentForm(!showCommentForm)}
                             aria-label="Comentar"
                         >
-                            <MessageSquare className="w-4 h-4" />
+                            <Icon name="olymp-comments-post-icon" className='w-[18px] h-[18px]' />
                         </button>
                         <button
                             className="w-9 h-9 hover:bg-amber-600 cursor-pointer rounded-full bg-[#9a9fbf] flex items-center justify-center shadow-sm text-white"
                             onClick={onShare}
                             aria-label="Compartir"
                         >
-                            <Share2 className="w-4 h-4" />
+                            <Icon name="olymp-share-icon" className='w-[18px] h-[18px]' />
                         </button>
                     </div>
 
@@ -136,14 +135,14 @@ const PostItem = ({
                             </div>
 
                             <button
-                                className="ml-3 text-sm text-gray-500 hover:text-red-500 transition-colors text-left group"
+                                className="ml-3 text-sm text-gray-500 transition-colors text-left group"
                                 onClick={onToggleLike}
                             >
-                                <div className="flex items-center text-[#9aa3b2] group-hover:text-red-500">
-                                    <Heart className={`w-4 h-4 ${post.likes.isLiked ? 'fill-current text-red-500' : ''}`} />
-                                    <span className="ml-2 text-sm text-gray-500 group-hover:text-red-500">{post.likes.count}</span>
+                                <div className="flex items-center text-[#9aa3b2]">
+                                    <Icon name="olymp-like-post-icon" className={`w-[15px] h-[15px] cursor-pointer ${post.likes.isLiked ? 'fill-current text-red-500' : ''}`} />
+                                    <span className="ml-2 text-sm text-gray-500">{post.likes.count}</span>
                                 </div>
-                                <div className="text-xs text-gray-400 mt-1 group-hover:text-red-400">
+                                <div className="text-xs text-gray-400 mt-1">
                                     {post.likes.users.length > 0 && (
                                         <>
                                             A {post.likes.users.slice(0, 2).join(', ')}
@@ -160,11 +159,11 @@ const PostItem = ({
                                 className="flex items-center space-x-2 hover:text-primary transition-colors cursor-pointer"
                                 onClick={() => setShowCommentForm(!showCommentForm)}
                             >
-                                <MessageSquare className="w-5 h-5" />
+                                <Icon name="olymp-comments-post-icon" className='w-[18px] h-[18px]' />
                                 <span className="text-sm">{post.comments}</span>
                             </button>
                             <div className="flex items-center space-x-2">
-                                <Share2 className="w-5 h-5 text-gray-400" />
+                                <Icon name="olymp-share-icon" className='w-[18px] h-[18px]' />
                                 <span className="text-sm">{post.shares}</span>
                             </div>
                         </div>
@@ -199,7 +198,7 @@ const PostItem = ({
                                         onClick={() => onToggleCommentLike(comment.id)}
                                         aria-label={comment.isLiked ? 'Quitar like del comentario' : 'Dar like al comentario'}
                                     >
-                                        <Heart className={`w-4 h-4 mr-2 ${comment.isLiked ? 'fill-current' : ''}`} />
+                                        <Icon name="olymp-like-post-icon" className={`w-4 h-4 mr-2 ${comment.isLiked ? 'fill-current' : ''}`} />
                                         <span className="text-sm text-gray-500">{comment.likes}</span>
                                     </button>
                                 </div>
@@ -218,22 +217,6 @@ const PostItem = ({
                             </div>
                         )}
                     </>
-                )}
-
-                {!showCommentForm && (
-                    <div
-                        className="p-4 cursor-pointer hover:bg-gray-50 transition-colors border-t border-gray-100"
-                        onClick={() => setShowCommentForm(true)}
-                    >
-                        <div className="flex items-center space-x-3 text-gray-400">
-                            <Avatar
-                                src="/assets/images/avatar-placeholder.png"
-                                alt="Tu avatar"
-                                size={32}
-                            />
-                            <span className="text-sm">Escribe un comentario...</span>
-                        </div>
-                    </div>
                 )}
 
                 {showCommentForm && (

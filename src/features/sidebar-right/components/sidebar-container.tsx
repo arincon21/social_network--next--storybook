@@ -6,6 +6,7 @@ import Input from "../../../shared/components/input";
 import SidebarSection from "./sidebar-section";
 import { Sliders, MessageSquare, X } from "lucide-react";
 import type { Friend } from "../constants/sidebar-right";
+import Icon from "@/shared/components/icon";
 
 type Section = { title: string; friends: Friend[] };
 
@@ -69,7 +70,7 @@ const SidebarContainer = forwardRef<HTMLElement, Props>(({ collapsed, showConten
           </button>
         ) : (
           <button type="button" className="w-full h-[70px] bg-[#6b43d6] cursor-pointer flex items-center justify-center text-white" onClick={onToggleExpand} aria-label="Abrir chat">
-            <MessageSquare size={25} />
+            <Icon name="olymp-chat---messages-icon" className='w-[25px] h-[25px]' />
           </button>
         )}
       </div>
