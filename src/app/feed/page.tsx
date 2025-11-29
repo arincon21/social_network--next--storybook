@@ -7,6 +7,7 @@ import { NewsFeed } from "@/features/news-feed";
 import { SidebarLeft } from "@/features/sidebar-left";
 import { SidebarRight } from "@/features/sidebar-right";
 import { SocialPost } from "@/features/social-post";
+import { StoriesContainer } from "@/features/stories";
 import { WeatherForecast } from "@/features/weather-chart";
 import { motion } from "framer-motion";
 import ScrollToTopButton from "@/shared/components/scroll-to-top-button";
@@ -43,6 +44,7 @@ export default function FeedPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
+                        <StoriesContainer />
                         <SocialPost />
                         <NewsFeed />
                     </motion.section>
