@@ -19,7 +19,7 @@ export const Default: Story = {};
 export const WithBadge: Story = {};
 
 export const Interactive: Story = {
-  play: async ({ canvasElement }) => {
+  play: async () => {
     console.log('MessagesDropdown is ready for interaction');
   },
 };

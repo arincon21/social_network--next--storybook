@@ -50,26 +50,34 @@ const smallItems = Array.from({ length: 5 }, (_, index) => ({
 }));
 
 // Simple item renderer
-const SimpleItemRenderer = ({ index, data }: { index: number; style: any; data: any[] }) => (
-  <div className="p-4 border-b border-gray-200 hover:bg-gray-50">
-    <div className="font-medium">{data[index].name}</div>
-    <div className="text-sm text-gray-600">{data[index].description}</div>
-  </div>
-);
+// Simple item renderer
+const SimpleItemRenderer = (rawItem: unknown, index: number, style: React.CSSProperties) => {
+  const item = rawItem as { name: string; description: string };
+  return (
+    <div className="p-4 border-b border-gray-200 hover:bg-gray-50">
+      <div className="font-medium">{item.name}</div>
+      <div className="text-sm text-gray-600">{item.description}</div>
+    </div>
+  );
+};
 
 // Complex item renderer with avatar
-const ComplexItemRenderer = ({ index, data }: { index: number; style: any; data: any[] }) => (
-  <div className="p-4 border-b border-gray-200 hover:bg-gray-50 flex items-center gap-3">
-    <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-      {data[index].name.charAt(0)}
+// Complex item renderer with avatar
+const ComplexItemRenderer = (rawItem: unknown, index: number, style: React.CSSProperties) => {
+  const item = rawItem as { id: number; name: string; description: string };
+  return (
+    <div className="p-4 border-b border-gray-200 hover:bg-gray-50 flex items-center gap-3">
+      <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+        {item.name.charAt(0)}
+      </div>
+      <div className="flex-1">
+        <div className="font-medium">{item.name}</div>
+        <div className="text-sm text-gray-600">{item.description}</div>
+      </div>
+      <div className="text-xs text-gray-400">#{item.id}</div>
     </div>
-    <div className="flex-1">
-      <div className="font-medium">{data[index].name}</div>
-      <div className="text-sm text-gray-600">{data[index].description}</div>
-    </div>
-    <div className="text-xs text-gray-400">#{data[index].id}</div>
-  </div>
-);
+  );
+};
 
 export const Default: Story = {
   args: {
@@ -115,16 +123,19 @@ export const TallItems: Story = {
     items: sampleItems.slice(0, 50),
     itemHeight: 120,
     height: 400,
-    renderItem: ({ index, data }: { index: number; style: any; data: any[] }) => (
-      <div className="p-6 border-b border-gray-200 hover:bg-gray-50">
-        <div className="font-bold text-lg">{data[index].name}</div>
-        <div className="text-gray-600 mt-2">{data[index].description}</div>
-        <div className="mt-3 flex gap-2">
-          <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Tag 1</span>
-          <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Tag 2</span>
+    renderItem: (rawItem: unknown, index: number, style: React.CSSProperties) => {
+      const item = rawItem as { name: string; description: string };
+      return (
+        <div className="p-6 border-b border-gray-200 hover:bg-gray-50">
+          <div className="font-bold text-lg">{item.name}</div>
+          <div className="text-gray-600 mt-2">{item.description}</div>
+          <div className="mt-3 flex gap-2">
+            <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Tag 1</span>
+            <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">Tag 2</span>
+          </div>
         </div>
-      </div>
-    ),
+      );
+    },
     overscan: 2,
   },
 };

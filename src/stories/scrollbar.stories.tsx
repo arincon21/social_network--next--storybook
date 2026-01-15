@@ -40,10 +40,6 @@ const meta = {
       control: { type: 'select' },
       options: ['left', 'right'],
     },
-    disableFadeEffects: {
-      description: 'Disable fade effects at top/bottom',
-      control: { type: 'boolean' },
-    },
   },
 } satisfies Meta<typeof Scrollbar>;
 
@@ -62,7 +58,7 @@ const longContent = Array.from({ length: 50 }, (_, i) => (
 const shortContent = Array.from({ length: 3 }, (_, i) => (
   <div key={i} className="p-3 border-b border-gray-200">
     <h4 className="font-medium">Short Item {i + 1}</h4>
-    <p className="text-sm text-gray-600">Short content that doesn't require scrolling.</p>
+    <p className="text-sm text-gray-600">Short content that doesn&apos;t require scrolling.</p>
   </div>
 ));
 
@@ -106,13 +102,7 @@ export const WideScrollbar: Story = {
   },
 };
 
-export const NoFadeEffects: Story = {
-  args: {
-    maxHeight: 'max-h-96',
-    disableFadeEffects: true,
-    children: <div className="space-y-0">{longContent}</div>,
-  },
-};
+
 
 export const CustomStyling: Story = {
   args: {
@@ -130,14 +120,13 @@ export const ChatMessages: Story = {
       <div>
         {Array.from({ length: 30 }, (_, i) => (
           <div key={i} className={`flex ${i % 3 === 0 ? 'justify-end' : 'justify-start'} mb-3`}>
-            <div className={`max-w-xs px-4 py-2 rounded-lg ${
-              i % 3 === 0 
-                ? 'bg-blue-500 text-white' 
-                : 'bg-gray-200 text-gray-800'
-            }`}>
+            <div className={`max-w-xs px-4 py-2 rounded-lg ${i % 3 === 0
+              ? 'bg-blue-500 text-white'
+              : 'bg-gray-200 text-gray-800'
+              }`}>
               <p className="text-sm">
-                {i % 3 === 0 
-                  ? `This is my message ${i + 1}` 
+                {i % 3 === 0
+                  ? `This is my message ${i + 1}`
                   : `This is a received message ${i + 1}. It might be longer to show how text wraps.`
                 }
               </p>
