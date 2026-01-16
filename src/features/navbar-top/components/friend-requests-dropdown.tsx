@@ -47,12 +47,12 @@ const FriendRequestsDropdown = memo(() => {
       ariaLabel="Solicitudes de amistad"
       testId="friend-requests-dropdown"
     >
-      <DropdownHeader 
+      <DropdownHeader
         title="SOLICITUDES DE AMISTAD"
         actions={headerActions}
       />
 
-      <EnhancedDropdownContent 
+      <EnhancedDropdownContent
         isEmpty={friendRequests.length === 0}
         emptyMessage="No hay solicitudes de amistad"
         useVirtualization={friendRequests.length > 10}
@@ -83,5 +83,7 @@ const FriendRequestsDropdown = memo(() => {
     </DropdownBase>
   );
 });
+
+FriendRequestsDropdown.displayName = "FriendRequestsDropdown";
 
 export default FriendRequestsDropdown;

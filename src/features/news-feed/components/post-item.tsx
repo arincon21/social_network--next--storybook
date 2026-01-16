@@ -1,6 +1,6 @@
 'use client';
 
-import { Heart, MessageSquare, Share2, MoreHorizontal } from 'lucide-react';
+import { MoreHorizontal } from "lucide-react";
 import Image from 'next/image';
 import { useState } from 'react';
 import Avatar from '@/shared/components/avatar';

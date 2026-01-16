@@ -22,7 +22,7 @@ export default function VirtualizedListExample() {
         height={400}
         itemHeight={60}
         className="border rounded-lg"
-        renderItem={(user, index, style) => (
+        renderItem={(user) => (
           <div className="flex items-center p-3 border-b border-gray-200 hover:bg-gray-50">
             <div className="flex-1">
               <div className="font-medium text-gray-900">{user.name}</div>

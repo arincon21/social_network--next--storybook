@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import React from 'react';
 
-import { SidebarToggleButton } from '@/components/ui/sidebar-toggle-button';
+import { SidebarToggleButton } from '@/features/sidebar-left/components/sidebar-toggle-button';
 
 const meta = {
   title: 'UI/SidebarToggleButton',
@@ -25,7 +25,7 @@ const meta = {
     },
   },
   args: {
-    onClick: () => {},
+    onClick: () => { },
   },
 } satisfies Meta<typeof SidebarToggleButton>;
 
@@ -64,7 +64,7 @@ export const Interactive: Story = {
   args: {
     collapsed: false,
     showLabels: true,
-    onClick: () => {},
+    onClick: () => { },
   },
   render: () => {
     const [collapsed, setCollapsed] = React.useState(false);

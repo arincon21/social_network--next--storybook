@@ -1,5 +1,4 @@
 import React from 'react';
-import { LucideIcon } from 'lucide-react';
 
 interface IconButtonProps {
   icon: React.ReactNode;
@@ -8,14 +7,14 @@ interface IconButtonProps {
   className?: string;
 }
 
-const IconButton: React.FC<IconButtonProps> = ({ 
-  icon, 
-  onClick, 
-  ariaLabel, 
-  className = '' 
+const IconButton: React.FC<IconButtonProps> = ({
+  icon,
+  onClick,
+  ariaLabel,
+  className = ''
 }) => {
   return (
-    <button 
+    <button
       className={`flex cursor-pointer items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors group ${className}`}
       type="button"
       aria-label={ariaLabel}

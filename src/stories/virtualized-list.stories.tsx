@@ -51,7 +51,7 @@ const smallItems = Array.from({ length: 5 }, (_, index) => ({
 
 // Simple item renderer
 // Simple item renderer
-const SimpleItemRenderer = (rawItem: unknown, index: number, style: React.CSSProperties) => {
+const SimpleItemRenderer = (rawItem: unknown) => {
   const item = rawItem as { name: string; description: string };
   return (
     <div className="p-4 border-b border-gray-200 hover:bg-gray-50">
@@ -63,7 +63,7 @@ const SimpleItemRenderer = (rawItem: unknown, index: number, style: React.CSSPro
 
 // Complex item renderer with avatar
 // Complex item renderer with avatar
-const ComplexItemRenderer = (rawItem: unknown, index: number, style: React.CSSProperties) => {
+const ComplexItemRenderer = (rawItem: unknown) => {
   const item = rawItem as { id: number; name: string; description: string };
   return (
     <div className="p-4 border-b border-gray-200 hover:bg-gray-50 flex items-center gap-3">
@@ -123,7 +123,7 @@ export const TallItems: Story = {
     items: sampleItems.slice(0, 50),
     itemHeight: 120,
     height: 400,
-    renderItem: (rawItem: unknown, index: number, style: React.CSSProperties) => {
+    renderItem: (rawItem: unknown) => {
       const item = rawItem as { name: string; description: string };
       return (
         <div className="p-6 border-b border-gray-200 hover:bg-gray-50">

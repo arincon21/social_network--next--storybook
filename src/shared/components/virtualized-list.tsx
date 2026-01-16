@@ -1,5 +1,5 @@
 "use client";
-import { memo, useCallback, CSSProperties, ReactElement, useState, useEffect, useRef } from "react";
+import { memo, useCallback, CSSProperties, ReactElement, useState, useRef } from "react";
 
 // Generic interface for better type safety
 interface VirtualizedListProps<T = unknown> {
@@ -12,10 +12,10 @@ interface VirtualizedListProps<T = unknown> {
   width?: number | string;
 }
 
-const VirtualizedListInner = <T,>({ 
-  items, 
-  itemHeight, 
-  height, 
+const VirtualizedListInner = <T,>({
+  items,
+  itemHeight,
+  height,
   renderItem,
   className = "",
   overscan = 5,
@@ -38,7 +38,7 @@ const VirtualizedListInner = <T,>({
   // Early return for empty state
   if (!items || items.length === 0) {
     return (
-      <div 
+      <div
         className={`flex items-center justify-center py-8 text-gray-500 text-sm ${className}`}
         style={{ height }}
       >
@@ -59,7 +59,7 @@ const VirtualizedListInner = <T,>({
       right: 0,
       height: itemHeight,
     };
-    
+
     visibleItems.push(
       <div key={i} style={style}>
         {renderItem(item, i, style)}
@@ -91,7 +91,7 @@ const VirtualizedListInner = <T,>({
 const VirtualizedList = memo(VirtualizedListInner) as <T>(props: VirtualizedListProps<T>) => ReactElement;
 
 // Add displayName for debugging
-(VirtualizedList as any).displayName = 'VirtualizedList';
+(VirtualizedList as React.NamedExoticComponent).displayName = 'VirtualizedList';
 
 export default VirtualizedList;
 export type { VirtualizedListProps };

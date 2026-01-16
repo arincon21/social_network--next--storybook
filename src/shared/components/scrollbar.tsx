@@ -39,7 +39,6 @@ const Scrollbar = ({
   maxHeight = "max-h-96",
   maxWidth,
   className = "",
-  showIndicator = false,
   trackColor = "bg-gray-300",
   thumbColor = "bg-gray-600",
   thumbHoverColor = "hover:bg-gray-700",

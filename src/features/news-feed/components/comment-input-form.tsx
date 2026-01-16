@@ -1,4 +1,3 @@
-import { MessageSquare } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import Avatar from '@/shared/components/avatar';
 import Button from '@/shared/components/button';

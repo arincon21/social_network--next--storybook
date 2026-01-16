@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Avatar from '@/shared/components/avatar';
-import Icon from '@/shared/components/icon';
 import { Story } from '../types/stories-types';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 

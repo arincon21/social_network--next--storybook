@@ -4,7 +4,7 @@ import React, { useMemo, useEffect, forwardRef } from "react";
 import Avatar from "@/shared/components/avatar";
 import Input from "../../../shared/components/input";
 import SidebarSection from "./sidebar-section";
-import { Sliders, MessageSquare, X } from "lucide-react";
+import { Sliders, X } from "lucide-react";
 import type { Friend } from "../constants/sidebar-right";
 import Icon from "@/shared/components/icon";
 

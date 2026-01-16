@@ -28,7 +28,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs, activeTab, onTabChange, className = '
     circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
     circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
     circle.classList.add("ripple");
-    
+
     // Use a light orange ripple color for tabs
     circle.style.backgroundColor = 'rgba(255, 150, 80, 0.3)';
 
@@ -44,21 +44,20 @@ const Tabs: React.FC<TabsProps> = ({ tabs, activeTab, onTabChange, className = '
 
   return (
     <div className={`flex items-center bg-[#fafbfd] ${className}`}>
-      {tabs.map((tab, index) => {
+      {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
-        const isLast = index === tabs.length - 1;
-        
+
+
         return (
           <span
             key={tab.id}
             onClick={(e) => createRipple(e, tab.id)}
-            className={`flex items-center gap-3 h-[70px] p-5 text-[12px] transition-colors cursor-pointer focus:outline-none relative overflow-hidden ${
-              isActive
-                ? 'bg-white text-gray-600 mb-[-1px] pt-[-1px] border-r border-[#e6ecf5]'
-                : `text-gray-400 border-r border-[#e6ecf5]`
-            }`}
+            className={`flex items-center gap-3 h-[70px] p-5 text-[12px] transition-colors cursor-pointer focus:outline-none relative overflow-hidden ${isActive
+              ? 'bg-white text-gray-600 mb-[-1px] pt-[-1px] border-r border-[#e6ecf5]'
+              : `text-gray-400 border-r border-[#e6ecf5]`
+              }`}
           >
-            <Icon name={tab.icon} className={`w-5 h-5 ${isActive ? 'text-orange-500' : 'text-gray-400'}` } />
+            <Icon name={tab.icon} className={`w-5 h-5 ${isActive ? 'text-orange-500' : 'text-gray-400'}`} />
             <span className="font-medium text-sm">{tab.label}</span>
           </span>
         );

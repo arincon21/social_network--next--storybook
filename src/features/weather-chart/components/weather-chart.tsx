@@ -1,7 +1,6 @@
 import React from 'react';
-import { Cloud, Sun, MoreHorizontal } from 'lucide-react';
+import { Cloud, Sun } from 'lucide-react';
 import BackgroundCard from '@/shared/components/background-card';
-import IconButton from '@/shared/components/icon-button';
 import WeatherForecastItem from '@/shared/components/weather-forecast-item';
 import { useWeatherData } from '../hooks/use-weather-data';
 
@@ -10,7 +9,7 @@ const WeatherChart: React.FC = () => {
 
   return (
     <div>
-      <BackgroundCard 
+      <BackgroundCard
         backgroundImage="/assets/bg/bg-wethear.jpg"
         alt="Fondo del clima"
         className="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600"
@@ -29,7 +28,7 @@ const WeatherChart: React.FC = () => {
                 <span className="text-lg opacity-90">{currentWeather.maxTemp}</span>
               </div>
             </div>
-            
+
             {/* Weather icon */}
             <div className="relative">
               <Cloud className="w-16 h-16" fill="white" stroke="none" />

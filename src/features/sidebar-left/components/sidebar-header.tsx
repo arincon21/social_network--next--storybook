@@ -5,7 +5,7 @@ interface SidebarHeaderProps {
   showLabels: boolean;
 }
 
-export const SidebarHeader = ({ collapsed, showLabels} : SidebarHeaderProps) => {
+export const SidebarHeader = ({ showLabels }: SidebarHeaderProps) => {
   return (
     <div className={`h-[70px] flex items-center bg-[#ff5e3a] cursor-pointer group w-full px-3 transition-colors`} >
       <div className="flex items-center justify-center text-center">
