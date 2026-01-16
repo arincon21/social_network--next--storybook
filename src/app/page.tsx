@@ -184,7 +184,7 @@ export default function LoginPage() {
 
                   <div className="mt-8 text-center">
                     <p className="text-xs text-[#888da8]">
-                      Don't have an account? <button type="button" onClick={toggleView} className="text-[#ff5e3a] font-bold hover:underline">Register Now!</button>
+                      Don&apos;t have an account? <button type="button" onClick={toggleView} className="text-[#ff5e3a] font-bold hover:underline">Register Now!</button>
                     </p>
                   </div>
                 </form>

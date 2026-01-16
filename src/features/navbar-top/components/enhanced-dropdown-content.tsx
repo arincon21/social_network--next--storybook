@@ -5,8 +5,8 @@ import Scrollbar from "@/shared/components/scrollbar";
 
 interface EnhancedDropdownContentProps {
   children?: ReactNode;
-  items?: any[];
-  renderItem?: (props: { index: number; style: any; data: any[] }) => React.JSX.Element;
+  items?: { id?: string | number;[key: string]: unknown }[];
+  renderItem?: (props: { index: number; style: React.CSSProperties; data: { id?: string | number;[key: string]: unknown }[] }) => React.JSX.Element;
   isLoading?: boolean;
   isEmpty?: boolean;
   emptyMessage?: string;
@@ -18,12 +18,12 @@ interface EnhancedDropdownContentProps {
   animationDelay?: number;
 }
 
-const EnhancedDropdownContent = memo(({ 
+const EnhancedDropdownContent = memo(({
   children,
   items = [],
   renderItem,
-  isLoading = false, 
-  isEmpty = false, 
+  isLoading = false,
+  isEmpty = false,
   emptyMessage = "No hay elementos disponibles",
   maxHeight = "max-h-64",
   className = "",
@@ -35,7 +35,7 @@ const EnhancedDropdownContent = memo(({
 
   if (isLoading) {
     return (
-      <div 
+      <div
         className={`${maxHeight} p-4 space-y-3 animate-fade-in will-change-opacity ${className}`}
         role="status"
         aria-label="Cargando contenido"
@@ -55,7 +55,7 @@ const EnhancedDropdownContent = memo(({
 
   if (isEmpty || (items.length === 0 && !children)) {
     return (
-      <div 
+      <div
         className={`${maxHeight} flex items-center justify-center py-8 text-gray-500 text-sm animate-fade-in will-change-opacity ${className}`}
         role="status"
         aria-label={emptyMessage}
@@ -72,7 +72,7 @@ const EnhancedDropdownContent = memo(({
   if (useVirtualization && items.length > 50 && renderItem) {
     const visibleItems = items.slice(0, 20); // Show first 20 items
     return (
-      <Scrollbar 
+      <Scrollbar
         maxHeight={maxHeight}
         className={`animate-fade-in will-change-transform ${className}`}
         showIndicator={true}
@@ -104,7 +104,7 @@ const EnhancedDropdownContent = memo(({
 
   // Regular animated list
   return (
-    <Scrollbar 
+    <Scrollbar
       maxHeight={maxHeight}
       className={`animate-fade-in will-change-transform ${className}`}
       showIndicator={true}

@@ -129,6 +129,11 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 
 ## Despliegue
 
-La aplicación está optimizada para desplegar en Vercel, pero puede desplegarse en cualquier plataforma que soporte Next.js.
+La aplicación está optimizada para desplegar en Vercel, y ya se encuentra activa en producción.
+
+### Detalles de Producción
+- **URL del Proyecto:** [https://social-network-next-storybook.vercel.app](https://social-network-next-storybook.vercel.app)
+- **Plataforma:** Vercel (Production)
+- **Status:** Activo 🟢
 
 Para más información sobre despliegue, consulta la [documentación de Next.js](https://nextjs.org/docs/app/building-your-application/deploying).
